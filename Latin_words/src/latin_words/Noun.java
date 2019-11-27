@@ -7,7 +7,7 @@ package latin_words;
 
 /**
  *
- * @author s4nk4
+ * @author Jerezzz
  */
 public class Noun {
     private final String wordText;
