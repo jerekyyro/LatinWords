@@ -7,7 +7,7 @@ package latin_words;
 import java.util.Scanner;
 /**
  *
- * @author s4nk4
+ * @author Jerezzz
  */
 
         
@@ -18,7 +18,7 @@ public class Latin_words {
     public static void main(String[] args) {
         Scanner wordReader = new Scanner(System.in);
         while (true) {
-            System.out.println("Latin nouns beta by Jere Kyyrö 2019");
+            System.out.println("Latin nouns beta by jerezzz 2019");
             System.out.println("Based on 'Latinan alkeiskurssi opetusmoniste' by Jyri Vaahtera, Turku: Turun yliopisto, 1999");
             System.out.println("Enter a latin noun to be analysed in any form.");
             System.out.println("Use CAPITAL CASE for long vowels.");
