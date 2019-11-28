@@ -11,8 +11,8 @@ package latin_words;
  */
 public class Noun {
     private final String wordText;
-    private String nBody;
-    private String iBody;
+    private String nBody; // nominative body of the noun
+    private String iBody; // inflected body
     private String suffix;
     private String gender;
     private String count;
@@ -339,21 +339,21 @@ public class Noun {
     public void makeBody() {
         // separating body from given text with help of suffix
         this.nBody = this.wordText.substring(0, (this.wordText.length()-this.suffix.length()));
-        // käytä täällä isVowel() -metodia!
-        //III konjugaation vartalot
+        // use isVowel() method here!
+        //conjugation III bodies
         if (this.declination.contains("2")) {
             if (this.suffix.contains("er")) {
                 this.iBody = this.nBody+"r";
             }
         }
        
-        if (this.declination.contains("3") && this.isCons(this.getlast(1)) && this.isCons(this.getlast(2))) { 
-            //paranna tätä -- vaatii ehkä niden 3. dekl. juttujen paremman määrittelyn ylempänä
+        if (this.declination.contains("3") && this.isCons(this.getlast(1)) && this.isCons(this.getlast(2))) {
+            // enhance this: may require better definition of 3rd declination stuff above
             this.nBody = this.nBody.substring(0, this.nBody.length()-2)+"e"+this.getlast(1);
         }
         
         if (this.nBody.substring((this.nBody.length()-1)).equals("x")) {
-            System.out.println("tee tänne jotain");
+            System.out.println("do something here");
         } 
         this.iBody = this.wordText.substring(0, (this.wordText.length()-this.suffix.length()));
     }
@@ -385,7 +385,7 @@ public class Noun {
     public String toString() {
         if (this.suffix.equals("")) {
             return "Not a Latin word or analysis not complete.";
-            // this may be replaced by checking the nuulPointer Exception at the end of getsuffix?
+            // this may be replaced by checking the nullPointer Exception at the end of getsuffix?
         } else {
         return "Given word: "+this.wordText+".\n"+this.getBody()+", suffix -"+this.suffix+"."
                 + "\ndeclination "+this.declination+"\n"+this.count+" "+this.declension+","+this.gender;
