@@ -1,5 +1,5 @@
 # LatinWords
-A Java application which identifies Latin nominative forms.
+A Java application that identifies Latin nominative forms.
 
 Based on 'Latinan alkeiskurssi opetusmoniste' by Jyri Vaahtera, Turku: Turun yliopisto, 1999.
 
